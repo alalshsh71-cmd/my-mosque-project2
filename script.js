@@ -1,28 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const iconItems = document.querySelectorAll('.icon-item');
-    const contentSections = document.querySelectorAll('.content-section');
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const tabContents = document.querySelectorAll('.tab-content');
 
-    iconItems.forEach(icon => {
-        icon.addEventListener('click', () => {
-            // Get the ID of the section to show
-            const targetId = icon.getAttribute('data-target');
-            const targetSection = document.getElementById(targetId);
+    tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const targetTab = button.dataset.tab;
 
-            // Hide all content sections
-            contentSections.forEach(section => {
-                section.classList.remove('active');
-            });
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            tabContents.forEach(content => content.classList.remove('active'));
 
-            // Show the target section
-            if (targetSection) {
-                targetSection.classList.add('active');
-            }
+            button.classList.add('active');
 
-            // Remove and add 'active' class on clicked icon for visual feedback
-            iconItems.forEach(item => {
-                item.classList.remove('active');
-            });
-            icon.classList.add('active');
+            document.getElementById(targetTab).classList.add('active');
         });
     });
 });
