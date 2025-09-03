@@ -351,6 +351,7 @@ li::before {
 
     .partner-item p {
         font-size: 1rem;
-        text-align: right;
+        text-align: center;
     }
 }
+
