@@ -61,3 +61,33 @@
         text-align: right;
     }
 }
+
+.partner-card i {
+    font-size: 3rem;
+    color: var(--secondary-color);
+    margin-left: 2rem; /* مسافة بين الأيقونة والنص */
+}
+
+/* ... أكواد أخرى ... */
+
+@media (max-width: 768px) {
+    /* ... أكواد أخرى ... */
+
+    /* هذا هو التعديل الصحيح لقسم الشركاء في الجوال */
+    .partner-card {
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+        align-items: center;
+        text-align: right;
+    }
+
+    .partner-card i {
+        margin-left: 1rem;
+        margin-right: 0;
+    }
+
+    .partner-card p {
+        font-size: 1rem;
+        text-align: right;
+    }
+}
