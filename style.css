@@ -11,11 +11,14 @@ body {
     padding: 0;
     direction: rtl;
     text-align: right;
-    background-image: url('licensed-image.jpg'); /* غير اسم الصورة هنا إذا كان مختلفاً */
+
+    background-image: url('licensed-image.jpg');
     background-size: cover;
-    background-repeat: no-repeat;
+    background-position: center;
     background-attachment: fixed;
+    background-repeat: no-repeat;
     background-color: #f0f0f0;
+
     color: var(--text-color);
     line-height: 1.6;
 }
@@ -29,8 +32,10 @@ body {
     --light-blue: #2196f3;
 }
 
-main section, .menu-icons {
-    background-color: rgba(255, 255, 255, 0.9);
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
 }
 
 .hero {
@@ -42,6 +47,8 @@ main section, .menu-icons {
     flex-direction: column;
     align-items: center;
     position: relative;
+    border-radius: 8px;
+    margin-bottom: 2rem;
 }
 
 .logo-container {
@@ -52,7 +59,7 @@ main section, .menu-icons {
 }
 
 .association-logo {
-    max-width: 600px;
+    max-width: 300px;
     height: auto;
     display: block;
     margin: 0;
@@ -65,6 +72,7 @@ main section, .menu-icons {
     text-align: center;
     width: 100%;
     padding-top: 1rem;
+    color: white;
 }
 
 .project-info {
@@ -74,13 +82,8 @@ main section, .menu-icons {
     width: 100%;
 }
 
-main {
-    padding: 2rem 1rem;
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-section {
+.content-box {
+    background-color: rgba(255, 255, 255, 0.9);
     padding: 2rem;
     margin-bottom: 2rem;
     border-radius: 8px;
@@ -113,96 +116,77 @@ li::before {
     font-size: 1rem;
 }
 
-/* New: Interactive Icons Section */
-.menu-icons {
+/* Tabs Styles */
+.tabs-container {
+    padding: 0;
+}
+
+.tabs-nav {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+    margin-bottom: 0;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    overflow: hidden;
+}
+
+.tab-button {
+    background-color: var(--primary-color);
+    border: none;
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    font-family: 'Mohammad-Bold-Art', sans-serif;
+    font-size: 1.1rem;
+    color: white;
+    margin-bottom: -2px;
+    transition: background-color 0.3s, color 0.3s;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.tab-button:hover:not(.active) {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.tab-button.active {
+    background-color: white;
+    color: var(--primary-color);
+    border-bottom: 2px solid white;
+}
+
+.tab-content {
+    display: none;
+    padding: 1.5rem 2rem;
+    border-radius: 0 0 8px 8px;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Existing styles for content elements */
+.goal-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 1.5rem;
-    margin-bottom: 2rem;
-}
-
-.icon-item {
     text-align: center;
-    padding: 1.5rem;
-    background-color: #f1f8e9;
-    border-radius: 8px;
-    border: 1px solid var(--light-green);
-    cursor: pointer;
-    transition: transform 0.3s, background-color 0.3s;
-    flex: 1 1 150px;
-}
-
-.icon-item:hover {
-    transform: translateY(-5px);
-    background-color: #e8f5e9;
-}
-
-/* New: Style for the active icon */
-.icon-item.active {
-    background-color: var(--primary-color);
-    color: white;
-    transform: translateY(0);
-}
-
-.icon-item.active p,
-.icon-item.active i {
-    color: white; /* Make text and icon white */
-}
-
-.icon-item i {
-    font-size: 2rem;
-    color: var(--primary-color);
-    margin-bottom: 0.5rem;
-}
-
-/* Hide all content sections by default */
-.content-section {
-    display: none;
-    animation: fadeIn 0.5s ease-in-out;
-}
-
-/* Show the active content section */
-.content-section.active {
-    display: block;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-/* Existing styles below */
-.diagram-container {
-    text-align: center;
-}
-
-.diagram-image {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.image-caption {
-    font-style: italic;
-    color: #666;
-    margin-top: 1rem;
-}
-
-.goal-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
 }
 
 .goal-item {
-    text-align: center;
     background-color: #f1f8e9;
-    padding: 1.5rem;
+    padding: 1rem;
     border-radius: 8px;
     border: 1px solid var(--light-green);
     transition: transform 0.3s;
+    flex: 0 0 auto;
+    min-width: 200px;
+    max-width: 250px;
 }
 
 .goal-item:hover {
@@ -210,7 +194,7 @@ li::before {
 }
 
 .goal-item i {
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: var(--primary-color);
     margin-bottom: 0.5rem;
 }
@@ -244,39 +228,62 @@ li::before {
     margin-top: 0;
 }
 
-/* تنسيقات قسم الشركاء المعدلة */
-.partner-card {
-    text-align: right;
-    background-color: #e3f2fd;
-    padding: 2rem;
-    border-radius: 8px;
-    border: 1px solid var(--light-blue);
-    display: flex;
-    flex-direction: row-reverse; /* عكس ترتيب العناصر ليكون الشعار على اليمين */
-    align-items: center;
-    gap: 1rem;
-    justify-content: flex-end; /* محاذاة العناصر إلى اليمين */
-}
-
-.partner-card i {
-    font-size: 3rem;
-    color: var(--secondary-color);
-    margin-left: 2rem; /* مسافة بين الأيقونة والنص */
-}
-
-.conclusion-points {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    font-weight: bold;
-    font-size: 1.2rem;
+.diagram-container {
     text-align: center;
 }
 
-.conclusion-points p {
-    margin: 0;
+.diagram-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+.image-caption {
+    font-style: italic;
+    color: #666;
+    margin-top: 1rem;
+}
+
+/* تنسيقات قسم الشركاء المعدلة */
+.partner-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start; /* لضمان أن عناصر القائمة نفسها تبدأ من اليمين في تخطيط RTL */
+    padding-right: 2rem; /* مسافة من الحافة اليمنى للحاوية .content-box */
+}
+
+.partner-item {
+    background-color: transparent;
+    padding: 0;
+    border: none;
+    box-shadow: none;
+    transition: none;
+    display: flex;
+    align-items: center;
+    width: auto; /* السماح للعناصر بأخذ عرضها الطبيعي */
+    max-width: none;
+}
+
+.partner-logo {
+    max-width: 60px;
+    height: auto;
+    margin-right: 2rem; /* زيادة المسافة هنا لتوفير فصل واضح */
+    background-color: transparent;
+    padding: 0;
+    box-shadow: none;
+}
+
+.partner-item p {
+    font-size: 1.2rem;
+    margin: 0;
+    font-weight: bold;
+    flex-grow: 0; /* لا تسمح للنص بملء المساحة المتبقية */
+    text-align: right;
+}
+
+/* Media Queries for Responsiveness */
 @media (max-width: 768px) {
     .hero h1 {
         font-size: 2rem;
@@ -296,21 +303,48 @@ li::before {
         text-align: center;
     }
 
-    /* هذا هو التعديل الصحيح لقسم الشركاء في الجوال */
-    .partner-card {
-        flex-direction: row-reverse;
-        justify-content: flex-end;
-        align-items: center;
-        text-align: right;
+    .tabs-nav {
+        flex-direction: column;
+        border-bottom: none;
     }
 
-    .partner-card i {
-        margin-left: 1rem;
-        margin-right: 0;
+    .tab-button {
+        border-radius: 0;
+        border-bottom: 1px solid white;
+        margin-bottom: 0;
+        flex-grow: unset;
+        width: 100%;
+    }
+    
+    .tab-button:last-child {
+        border-bottom: none;
     }
 
-    .partner-card p {
+    .tab-button.active {
+        border-bottom: 1px solid white;
+    }
+
+    .tab-content {
+        border-radius: 0 0 8px 8px;
+    }
+
+    /* تعديلات خاصة بقسم الشركاء للهواتف */
+    .partner-item {
+        width: auto;
+        padding: 0;
+    }
+
+    .partner-logo {
+        max-width: 50px;
+        margin-right: 1rem;
+    }
+
+    .partner-item p {
         font-size: 1rem;
-        text-align: right;
+    }
+    
+    .partner-list {
+        align-items: flex-end;
+        padding-right: 1rem;
     }
 }
