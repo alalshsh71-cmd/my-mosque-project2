@@ -1,0 +1,256 @@
+@font-face {
+    font-family: 'Mohammad-Bold-Art';
+    src: url('mohammad-bold-art-1.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Mohammad-Bold-Art', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+    direction: rtl;
+    text-align: right;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+:root {
+    --primary-color: #2e7d32; /* أخضر */
+    --secondary-color: #0d47a1; /* أزرق */
+    --background-color: #f9f9f9;
+    --text-color: #333;
+    --light-green: #4caf50;
+    --light-blue: #2196f3;
+}
+
+.hero {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 2rem 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex; /* استخدام فليكس بوكس */
+    flex-direction: column;
+    align-items: center; /* توسيط العناصر عموديا */
+    position: relative; /* لتحديد موضع الشعار بشكل مطلق */
+}
+
+.logo-container {
+    position: absolute; /* وضع الشعار بشكل مطلق */
+    right: 1rem; /* دفعه لليسار */
+    top: 1rem; /* دفعه للأعلى قليلاً */
+    margin-bottom: 0; /* لا حاجة للهامش السفلي هنا */
+}
+
+.association-logo {
+    max-width: 300px; /* حجم أكبر للشعار */
+    height: auto;
+    display: block;
+    margin: 0; /* إزالة التوسيط التلقائي */
+}
+
+.hero h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center; /* توسيط العنوان الرئيسي */
+    width: 100%; /* ليمتد على عرض الـ hero */
+    padding-top: 1rem; /* لإعطاء مسافة أسفل الشعار */
+}
+
+.project-info {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    text-align: center; /* توسيط معلومات المشروع */
+    width: 100%;
+}
+
+main {
+    padding: 2rem 1rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+section {
+    background-color: white;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+h2 {
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin-top: 0;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 0.8rem;
+    position: relative;
+    padding-right: 1.5rem;
+}
+
+li::before {
+    content: '✅';
+    position: absolute;
+    right: 0;
+    font-size: 1rem;
+}
+
+/* Diagram Section */
+.diagram-container {
+    text-align: center;
+}
+
+.diagram-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.image-caption {
+    font-style: italic;
+    color: #666;
+    margin-top: 1rem;
+}
+
+/* Goals Section */
+.goal-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.goal-item {
+    text-align: center;
+    background-color: #f1f8e9; /* Light green background */
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--light-green);
+    transition: transform 0.3s;
+}
+
+.goal-item:hover {
+    transform: translateY(-5px);
+}
+
+.goal-item i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+/* Timeline Section */
+.timeline {
+    border-right: 3px solid var(--primary-color);
+    padding-right: 20px;
+    position: relative;
+}
+
+.timeline-item {
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    right: -28px;
+    top: 5px;
+    width: 15px;
+    height: 15px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    border: 3px solid white;
+    box-shadow: 0 0 0 3px var(--primary-color);
+}
+
+.timeline-item h3 {
+    color: var(--secondary-color);
+    margin-top: 0;
+}
+
+/* Partners Section */
+.partner-card {
+    text-align: center;
+    background-color: #e3f2fd; /* Light blue background */
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid var(--light-blue);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.partner-card i {
+    font-size: 3rem;
+    color: var(--secondary-color);
+}
+
+/* Conclusion Section */
+.conclusion-points {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.conclusion-points p {
+    margin: 0;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    color: #fff;
+    background-color: var(--secondary-color);
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .association-logo {
+        max-width: 200px; /* تصغير الشعار على الجوال */
+    }
+
+    .logo-container {
+        position: static; /* إزالة الموضع المطلق على الجوال */
+        margin-bottom: 1rem; /* إضافة مسافة تحت الشعار */
+        text-align: center; /* توسيط الشعار */
+    }
+}
+
+/* CSS Pagination */
+@media print {
+    section {
+        break-inside: avoid-page;
+    }
+    .diagram-container {
+        break-inside: avoid-page;
+    }
+    .timeline {
+        break-inside: avoid-page;
+    }
+    h2 {
+        break-after: avoid;
+    }
+}
