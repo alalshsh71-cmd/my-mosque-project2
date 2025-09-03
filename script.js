@@ -1,28 +1,28 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const counter = document.getElementById('water-counter');
-    const target = +counter.getAttribute('data-target');
-    let count = 0;
-    const speed = 200; // Adjust this value for animation speed (larger value = slower animation)
-    
-    // Check if the element is in the viewport
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const updateCounter = () => {
-                    const increment = target / speed;
-                    if (count < target) {
-                        count += increment;
-                        counter.innerText = Math.ceil(count);
-                        setTimeout(updateCounter, 1);
-                    } else {
-                        counter.innerText = target;
-                    }
-                };
-                updateCounter();
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.5 }); // Trigger when 50% of the element is visible
+    const iconItems = document.querySelectorAll('.icon-item');
+    const contentSections = document.querySelectorAll('.content-section');
 
-    observer.observe(counter);
+    iconItems.forEach(icon => {
+        icon.addEventListener('click', () => {
+            // Get the ID of the section to show
+            const targetId = icon.getAttribute('data-target');
+            const targetSection = document.getElementById(targetId);
+
+            // Hide all content sections
+            contentSections.forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Show the target section
+            if (targetSection) {
+                targetSection.classList.add('active');
+            }
+
+            // Remove and add 'active' class on clicked icon for visual feedback
+            iconItems.forEach(item => {
+                item.classList.remove('active');
+            });
+            icon.classList.add('active');
+        });
+    });
 });
