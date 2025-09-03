@@ -30,39 +30,39 @@ body {
     color: white;
     padding: 2rem 1rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: flex; /* استخدام فليكس بوكس */
+    display: flex;
     flex-direction: column;
-    align-items: center; /* توسيط العناصر عموديا */
-    position: relative; /* لتحديد موضع الشعار بشكل مطلق */
+    align-items: center;
+    position: relative;
 }
 
 .logo-container {
-    position: absolute; /* وضع الشعار بشكل مطلق */
-    right: 1rem; /* دفعه لليسار */
-    top: 1rem; /* دفعه للأعلى قليلاً */
-    margin-bottom: 0; /* لا حاجة للهامش السفلي هنا */
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    margin-bottom: 0;
 }
 
 .association-logo {
-    max-width: 300px; /* حجم أكبر للشعار */
+    max-width: 300px;
     height: auto;
     display: block;
-    margin: 0; /* إزالة التوسيط التلقائي */
+    margin: 0;
 }
 
 .hero h1 {
     margin: 0;
     font-size: 2.5rem;
     font-weight: bold;
-    text-align: center; /* توسيط العنوان الرئيسي */
-    width: 100%; /* ليمتد على عرض الـ hero */
-    padding-top: 1rem; /* لإعطاء مسافة أسفل الشعار */
+    text-align: center;
+    width: 100%;
+    padding-top: 1rem;
 }
 
 .project-info {
     font-size: 1.2rem;
     margin-top: 1rem;
-    text-align: center; /* توسيط معلومات المشروع */
+    text-align: center;
     width: 100%;
 }
 
@@ -106,7 +106,54 @@ li::before {
     font-size: 1rem;
 }
 
-/* Diagram Section */
+/* New: Interactive Icons Section */
+.menu-icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.icon-item {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: #f1f8e9;
+    border-radius: 8px;
+    border: 1px solid var(--light-green);
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+    flex: 1 1 150px; /* Adjusts width on different screens */
+}
+
+.icon-item:hover {
+    transform: translateY(-5px);
+    background-color: #e8f5e9;
+}
+
+.icon-item i {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+/* Hide all content sections by default */
+.content-section {
+    display: none;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Show the active content section */
+.content-section.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Existing styles below */
 .diagram-container {
     text-align: center;
 }
@@ -124,7 +171,6 @@ li::before {
     margin-top: 1rem;
 }
 
-/* Goals Section */
 .goal-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -133,7 +179,7 @@ li::before {
 
 .goal-item {
     text-align: center;
-    background-color: #f1f8e9; /* Light green background */
+    background-color: #f1f8e9;
     padding: 1.5rem;
     border-radius: 8px;
     border: 1px solid var(--light-green);
@@ -150,7 +196,6 @@ li::before {
     margin-bottom: 0.5rem;
 }
 
-/* Timeline Section */
 .timeline {
     border-right: 3px solid var(--primary-color);
     padding-right: 20px;
@@ -180,10 +225,9 @@ li::before {
     margin-top: 0;
 }
 
-/* Partners Section */
 .partner-card {
     text-align: center;
-    background-color: #e3f2fd; /* Light blue background */
+    background-color: #e3f2fd;
     padding: 2rem;
     border-radius: 8px;
     border: 1px solid var(--light-blue);
@@ -198,7 +242,6 @@ li::before {
     color: var(--secondary-color);
 }
 
-/* Conclusion Section */
 .conclusion-points {
     display: flex;
     flex-direction: column;
@@ -229,28 +272,12 @@ footer {
     }
 
     .association-logo {
-        max-width: 200px; /* تصغير الشعار على الجوال */
+        max-width: 200px;
     }
 
     .logo-container {
-        position: static; /* إزالة الموضع المطلق على الجوال */
-        margin-bottom: 1rem; /* إضافة مسافة تحت الشعار */
-        text-align: center; /* توسيط الشعار */
-    }
-}
-
-/* CSS Pagination */
-@media print {
-    section {
-        break-inside: avoid-page;
-    }
-    .diagram-container {
-        break-inside: avoid-page;
-    }
-    .timeline {
-        break-inside: avoid-page;
-    }
-    h2 {
-        break-after: avoid;
+        position: static;
+        margin-bottom: 1rem;
+        text-align: center;
     }
 }
