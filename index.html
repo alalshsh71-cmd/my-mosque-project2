@@ -3,88 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تشجير المساجد</title>
+    <title>مشروع ظِلال المساجد</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+
     <header class="hero">
         <div class="logo-container">
             <img src="image2.png" alt="شعار جمعية مآذن لعناية المساجد" class="association-logo">
         </div>
-        <h1>مبادرة ظلال المساجد</h1>
+        <h1>مشروع ظِلال المساجد</h1>
         <p class="project-info">
-            <strong>احد المبادرات المستهدفة لدى</strong> جمعية مآذن لعناية المساجد – الخفجي
+            <strong>احد المشاريع المستهدفة لدى</strong> جمعية مآذن لعناية المساجد – الخفجي
         </p>
     </header>
 
     <main>
-        <section class="intro-section">
+        <section class="intro-section content-box">
             <h2>فكرة المشروع 🌿</h2>
             <p>
                 يهدف هذا المشروع إلى تحقيق الاستدامة البيئية في المساجد عن طريق إعادة تدوير مياه الوضوء. بدلاً من هدر هذه المياه، يتم تجميعها وتنقيتها باستخدام نظام بسيط وفعال يعمل بالطاقة الشمسية، ثم استخدامها في ري الأشجار والنباتات داخل وحول المسجد، مما يساهم في زيادة الرقعة الخضراء وتقليل استهلاك المياه الصالحة للشرب.
             </p>
         </section>
 
-        <section class="menu-icons">
-            <div class="icon-item" data-target="goals-section">
-                <i class="fas fa-bullseye"></i>
-                <p>الأهداف</p>
+        <section class="tabs-container content-box">
+            <div class="tabs-nav">
+                <button class="tab-button active" data-tab="tab-goals">الأهداف</button>
+                <button class="tab-button" data-tab="tab-reasons">مبررات المشروع</button>
+                <button class="tab-button" data-tab="tab-mechanism">آلية التنفيذ</button>
+                <button class="tab-button" data-tab="tab-flow">مخطط تدفق المياه</button>
+                <button class="tab-button" data-tab="tab-partners">الشركاء</button>
+                <button class="tab-button" data-tab="tab-impact">الأثر المتوقع</button>
             </div>
-            <div class="icon-item" data-target="justification-section">
-                <i class="fas fa-file-alt"></i>
-                <p>مبررات المشروع</p>
-            </div>
-            <div class="icon-item" data-target="implementation-section">
-                <i class="fas fa-cogs"></i>
-                <p>آلية التنفيذ</p>
-            </div>
-            <div class="icon-item" data-target="diagram-section">
-                <i class="fas fa-chart-bar"></i>
-                <p>مخطط تدفق المياه</p>
-            </div>
-            <div class="icon-item" data-target="partners-section">
-                <i class="fas fa-handshake"></i>
-                <p>الشركاء الاستراتيجيون</p>
-            </div>
-            <div class="icon-item" data-target="impact-section">
-                <i class="fas fa-seedling"></i>
-                <p>الأثر المتوقع</p>
-            </div>
-            <div class="icon-item" data-target="conclusion-section">
-                <i class="fas fa-check-circle"></i>
-                <p>خاتمة</p>
-            </div>
-        </section>
 
-        <div id="content-container">
-            <section id="goals-section" class="content-section">
-                <h2>أهداف المشروع</h2>
+            <div id="tab-goals" class="tab-content active">
+                <h2>الأهداف</h2>
                 <div class="goal-list">
-                    <div class="goal-item">
-                        <i class="fas fa-seedling"></i>
-                        <p>تشجير المساجد وزيادة الرقعة الخضراء في الأحياء.</p>
-                    </div>
-                    <div class="goal-item">
-                        <i class="fas fa-recycle"></i>
-                        <p>إعادة تدوير مياه الوضوء وتحويلها إلى مصدر لري النباتات.</p>
-                    </div>
-                    <div class="goal-item">
-                        <i class="fas fa-solar-panel"></i>
-                        <p>استخدام الطاقة الشمسية لتقليل الاعتماد على الكهرباء.</p>
-                    </div>
-                    <div class="goal-item">
-                        <i class="fas fa-microchip"></i>
-                        <p>تطبيق تقنيات حديثة (عداد، فلاتر، نظام ري بالتنقيط).</p>
-                    </div>
-                    <div class="goal-item">
-                        <i class="fas fa-satellite"></i>
-                        <p>توثيق أثر المشروع بالصور الفضائية (قبل وبعد).</p>
-                    </div>
+                    <div class="goal-item"><i class="fas fa-seedling"></i><p>تشجير المساجد وزيادة الرقعة الخضراء في الأحياء.</p></div>
+                    <div class="goal-item"><i class="fas fa-recycle"></i><p>إعادة تدوير مياه الوضوء وتحويلها إلى مصدر لري النباتات.</p></div>
+                    <div class="goal-item"><i class="fas fa-solar-panel"></i><p>الاعتماد على الطاقة الشمسية في تشغيل النظام الخاصة بتصفية المياه، بما يعزز كفاءة المشروع ويحقق الاستدامة.</p></div>
+                    <div class="goal-item"><i class="fas fa-microchip"></i><p>تطبيق تقنيات حديثة (عداد، فلاتر، نظام ري بالتنقيط).</p></div>
+                    <div class="goal-item"><i class="fas fa-satellite"></i><p>توثيق أثر المشروع بالصور الفضائية (قبل وبعد).</p></div>
                 </div>
-            </section>
-    
-            <section id="justification-section" class="content-section">
+            </div>
+
+            <div id="tab-reasons" class="tab-content">
                 <h2>مبررات المشروع</h2>
                 <ul>
                     <li>رفع مستوى التشجير وتحسين بيئة المساجد بما ينسجم مع أهداف رؤية المملكة 2030.</li>
@@ -93,9 +57,9 @@
                     <li>تحقيق الاستدامة باستخدام الطاقة الشمسية لتشغيل النظام.</li>
                     <li>جعل المساجد بيئة خضراء مريحة للمصلين وللمجتمع المحيط.</li>
                 </ul>
-            </section>
-    
-            <section id="implementation-section" class="content-section">
+            </div>
+
+            <div id="tab-mechanism" class="tab-content">
                 <h2>آلية التنفيذ</h2>
                 <div class="timeline">
                     <div class="timeline-item">
@@ -130,9 +94,9 @@
                         </ul>
                     </div>
                 </div>
-            </section>
-    
-            <section id="diagram-section" class="content-section">
+            </div>
+
+            <div id="tab-flow" class="tab-content">
                 <h2>مخطط تدفق المياه</h2>
                 <div class="diagram-container">
                     <img src="image.jpg" alt="مخطط توضيحي لتدفق المياه" class="diagram-image">
@@ -140,17 +104,27 @@
                         مخطط يوضح آلية إعادة تدوير مياه الوضوء من المسجد إلى الأشجار: تُجمع مياه الوضوء، تُفلتر، ثم تُخزن وتُستخدم لري الأشجار المحيطة بالمسجد.
                     </p>
                 </div>
-            </section>
-    
-            <section id="partners-section" class="content-section">
-                <h2>الشركاء الاستراتيجيون</h2>
-                <div class="partner-card">
-                    <i class="fas fa-satellite-dish"></i>
-                    <p>الهيئة السعودية للفضاء.</p>
+            </div>
+
+            <div id="tab-partners" class="tab-content">
+                <h2>الشركاء الاستراتيجيون 🤝</h2>
+                <div class="partner-list">
+                    <div class="partner-item">
+                        <img src="islamic-affairs-logo.png" alt="شعار وزارة الشؤون الإسلامية" class="partner-logo">
+                        <p>وزارة الشؤون الإسلامية</p>
+                    </div>
+                    <div class="partner-item">
+                        <img src="environment-logo.png" alt="شعار وزارة البيئة والمياه والزراعة" class="partner-logo">
+                        <p>وزارة البيئة والمياه والزراعة</p>
+                    </div>
+                    <div class="partner-item">
+                        <img src="space-agency-logo.png" alt="شعار الهيئة السعودية للفضاء" class="partner-logo">
+                        <p>الهيئة السعودية للفضاء</p>
+                    </div>
                 </div>
-            </section>
-    
-            <section id="impact-section" class="content-section">
+            </div>
+
+            <div id="tab-impact" class="tab-content">
                 <h2>الأثر المتوقع</h2>
                 <ul>
                     <li>الاستفادة من آلاف اللترات من مياه الوضوء سنويًا.</li>
@@ -158,22 +132,10 @@
                     <li>رفع الوعي البيئي لدى المجتمع.</li>
                     <li>نموذج وطني يمكن تعميمه على باقي المساجد.</li>
                 </ul>
-            </section>
-    
-            <section id="conclusion-section" class="content-section">
-                <h2>خاتمة</h2>
-                <div class="conclusion-points">
-                    <p>✅ الاستدامة البيئية 🌱</p>
-                    <p>✅ الابتكار التقني 🔋</p>
-                    <p>✅ البعد الديني (إكرام بيوت الله وتشجيرها) 🕌</p>
-                </div>
-            </section>
-        </div>
-    </main>
+            </div>
+        </section>
 
-    <footer>
-        <p>&copy; 2024 مشروع تشجير المساجد. جميع الحقوق محفوظة.</p>
-    </footer>
+    </main>
 
     <script src="script.js"></script>
 </body>
