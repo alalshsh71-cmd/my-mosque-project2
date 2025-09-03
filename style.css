@@ -328,23 +328,23 @@ li::before {
         border-radius: 0 0 8px 8px;
     }
 
-    /* تعديلات خاصة بقسم الشركاء للهواتف */
-    .partner-item {
-        width: auto;
-        padding: 0;
-    }
-
-    .partner-logo {
-        max-width: 50px;
-        margin-right: 1rem;
-    }
-
-    .partner-item p {
-        font-size: 1rem;
-    }
-    
     .partner-list {
-        align-items: flex-end;
-        padding-right: 1rem;
-    }
+  display: flex;
+  flex-direction: column; /* يخلي العناصر تحت بعض */
+  align-items: flex-end;  /* يخلي المحاذاة لليمين */
+  text-align: right;      /* يخلي النصوص لليمين */
 }
+
+.partner-item {
+  display: flex;
+  align-items: center;    /* يخلي اللوقو والنص بنفس الخط */
+  justify-content: flex-end; /* يخلي الكل بمحاذاة اليمين */
+}
+
+.partner-item p {
+  margin: 0;
+  font-size: 1rem;
+  text-align: right;
+}
+}
+
